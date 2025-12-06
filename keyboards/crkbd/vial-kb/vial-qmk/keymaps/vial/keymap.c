@@ -4,16 +4,16 @@
 #ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x6_3_ex2(
-		KC_QUOT,		KC_Q,		KC_W,		KC_E,		KC_R,		KC_T,		KC_NO,		KC_NO,		KC_Y,		KC_U,		KC_I,		KC_O,		KC_P,		KC_BSLS,
-		KC_LSFT,		LGUI_T(KC_A),		LALT_T(KC_S),		LCTL_T(KC_D),		LSFT_T(KC_F),		KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),		RCTL_T(KC_K),		RALT_T(KC_L),		RGUI_T(KC_SCLN),		KC_QUOT,
-		KC_LSFT,		LT(7, KC_Z),		KC_X,		KC_C,		KC_V,		KC_B,		KC_N,		KC_M,		KC_COMM,		KC_DOT,		LT(7, KC_SLSH),		KC_RSFT,
-		LT(1, KC_ESC),		LT(2, KC_SPC),		LT(3, KC_TAB),		LT(4, KC_ENT),		LT(5, KC_BSPC),		LT(6, KC_DEL)
+		KC_QUOT,		KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		KC_NO,		KC_NO,		KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        KC_BSLS,
+		KC_LSFT,		LGUI_T(KC_A),		LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F),	KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_SCLN),	KC_QUOT,
+		KC_LSFT,		LT(7, KC_Z),		KC_X,		    KC_C,   		KC_V,	    	KC_B,		KC_N,		KC_M,		KC_COMM,	KC_DOT,	    	LT(7, KC_SLSH),	KC_RSFT,
+		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
 	),
 	[1] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,		RGB_SAI,		RGB_VAI,		KC_NO,
-		KC_NO,		KC_LGUI,		KC_LOPT,		KC_LCTL,		KC_LSFT,		KC_NO,		KC_NO,		KC_NO,		KC_MPRV,		KC_VOLD,		KC_VOLU,		KC_MNXT,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_RALT,		DF(0),		DF(1),		KC_NO,		KC_NO,		KC_BRID,		KC_BRIU,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_MSTP,		KC_MPLY,		KC_MUTE
+		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,	RGB_SAI,		RGB_VAI,	KC_NO,
+		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
+		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,		KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,		KC_NO,		KC_NO,
+		KC_NO,		KC_NO,		KC_NO,		KC_MSTP,	KC_MPLY,	KC_MUTE
 	),
 	[2] = LAYOUT_split_3x6_3_ex2(
 		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_CAPS,		KC_AGIN,		KC_PSTE,		KC_COPY,		KC_CUT,		KC_UNDO,		KC_NO,

@@ -4,21 +4,23 @@
 #define VIAL_UNLOCK_COMBO_ROWS {0, 0}
 #define VIAL_UNLOCK_COMBO_COLS {0, 1}
 #define LAYER_STATE_16BIT   // enables up to 16 layers
-#undef DYNAMIC_KEYMAP_LAYER_COUNT
+#undef  DYNAMIC_KEYMAP_LAYER_COUNT
 #define DYNAMIC_KEYMAP_LAYER_COUNT 12
-#undef NUM_ENCODERS
+#undef  NUM_ENCODERS
 #define NUM_ENCODERS 12
 #define FLOW_TAP_TERM 150
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-#undef RGBLIGHT_DEFAULT_MODE
+#undef  RGBLIGHT_DEFAULT_MODE
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_LIGHT
-#undef RGBLIGHT_DEFAULT_VAL
+#undef  RGBLIGHT_DEFAULT_VAL
 #define RGBLIGHT_DEFAULT_VAL 0
-#undef RGB_MATRIX_DEFAULT_ON
+#undef  RGB_MATRIX_DEFAULT_ON
 #define RGB_MATRIX_DEFAULT_ON true
-#undef RGB_MATRIX_DEFAULT_MODE
+#undef  RGB_MATRIX_DEFAULT_MODE
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_SIMPLE
+#undef  DEBOUNCE
+#define DEBOUNCE 10
 
 #ifdef RGB_MATRIX_ENABLE
 #   undef RGB_MATRIX_KEYPRESSES // reacts to keypresses
@@ -27,16 +29,16 @@
 #   define RGB_MATRIX_SLEEP // turn off effects when suspended
 #   undef RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #   define RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
-#    undef RGB_MATRIX_HUE_STEP
-#    define RGB_MATRIX_HUE_STEP 8
-#    undef RGB_MATRIX_SAT_STEP
-#    define RGB_MATRIX_SAT_STEP 8
-#    undef RGB_MATRIX_VAL_STEP
-#    define RGB_MATRIX_VAL_STEP 8
-#    undef RGB_MATRIX_SPD_STEP
-#    define RGB_MATRIX_SPD_STEP 10
+#   undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
+#   undef RGB_MATRIX_HUE_STEP
+#   define RGB_MATRIX_HUE_STEP 8
+#   undef RGB_MATRIX_SAT_STEP
+#   define RGB_MATRIX_SAT_STEP 8
+#   undef RGB_MATRIX_VAL_STEP
+#   define RGB_MATRIX_VAL_STEP 8
+#   undef RGB_MATRIX_SPD_STEP
+#   define RGB_MATRIX_SPD_STEP 10
 
 /* Enable the animations you want/need.  You may need to enable only a small number of these because       *
  * they take up a lot of space.  Enable and confirm that you can still successfully compile your firmware. */
