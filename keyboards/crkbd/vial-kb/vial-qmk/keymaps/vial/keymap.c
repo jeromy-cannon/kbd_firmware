@@ -1,55 +1,55 @@
 #include QMK_KEYBOARD_H
 
 
-#ifdef LAYOUT_split_3x6_3_ex2
+//#ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,	    	KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		QK_LOCK,	QK_LOCK,	KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        KC_NO,
-		CW_TOGG,		LGUI_T(KC_A),		LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F),	KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_QUOT),	KC_NO,
-		KC_NO,	    	LT(7, KC_Z),		KC_X,		    KC_C,   		KC_V,	    	KC_B,		KC_N,		KC_M,		KC_COMM,	KC_DOT,	    	LT(7, KC_SLSH),	KC_RSFT,
-		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
+	[0] = LAYOUT_split_3x6_3_ex2( // Base Layer
+		KC_NO,	    	KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		QK_LOCK,	QK_LOCK,	KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        DF(7),
+		CW_TOGG,		LGUI_T(KC_A),		LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F),	KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_QUOT),	DF(0),
+		KC_NO,	    	KC_Z,		        KC_X,		    KC_C,   		KC_V,	    	KC_B,		                        KC_N,		KC_M,		    KC_COMM,	    KC_DOT,	    	KC_SLSH,	        KC_NO,
+		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	                                                                    LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
 	),
-	[1] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,	RGB_SAI,		RGB_VAI,	KC_NO,
-		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,		KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_MSTP,	KC_MPLY,	KC_MUTE
+	[1] = LAYOUT_split_3x6_3_ex2( // Media Layer
+		DF(7),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,	RGB_SAI,		RGB_VAI,	KC_NO,
+		DF(0),		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
+		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,		                        KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,		    KC_NO,		KC_NO,
+		KC_NO,		KC_NO,		KC_NO,		                                                            KC_MSTP,	KC_MPLY,	KC_MUTE
 	),
-	[2] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_CAPS,		KC_AGIN,		KC_PSTE,		KC_COPY,		KC_CUT,		KC_UNDO,	DM_REC2,
-		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_INS,		    KC_NO,          KC_LEFT,		KC_DOWN,		KC_UP,	    KC_RGHT,	DM_PLY2,
-		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(2),		KC_NO,		KC_NO,      KC_HOME,	    KC_PGDN,		KC_PGUP,		KC_END,		    DM_RSTP,
-		KC_NO,		KC_NO,		KC_NO,		KC_ENT,		KC_BSPC,	KC_DEL
+	[2] = LAYOUT_split_3x6_3_ex2( // Navigation Layer
+		DF(7),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_CAPS,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,	DM_REC2,
+		DF(0),		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_INS,		    KC_LEFT,	KC_DOWN,	KC_UP,	    KC_RGHT,	KC_NO,  DM_PLY2,
+		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(2),		KC_NO,		                            KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,		KC_NO,  DM_RSTP,
+		KC_NO,		KC_NO,		KC_NO,		                                                                KC_ENT,		KC_BSPC,	KC_DEL
 	),
-	[3] = LAYOUT_split_3x6_3_ex2(
-		KC_ACL2,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_AGIN,		KC_PSTE,		KC_COPY,	KC_CUT,		KC_UNDO,	DM_REC2,
-		KC_ACL1,	KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_NO,          KC_MS_L,		KC_MS_D,	KC_MS_U,	KC_MS_R,	DM_PLY2,
-		KC_ACL0,	KC_NO,		KC_RALT,	DF(0),		DF(3),		KC_NO,		KC_NO,       KC_WH_L,	KC_WH_D,	    KC_WH_U,		KC_WH_R,	DM_RSTP,
-		KC_NO,		KC_NO,		KC_NO,		KC_BTN2,	KC_BTN1,	KC_BTN3
+	[3] = LAYOUT_split_3x6_3_ex2( // Mouse Layer
+		DF(7),	    KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_NO,	DM_REC2,
+		DF(0),	    KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MS_L,	KC_MS_D,	KC_MS_U,	KC_MS_R,	KC_NO,  DM_PLY2,
+		KC_NO,	    KC_NO,		KC_RALT,	DF(0),		DF(3),		KC_NO,		                        KC_WH_L,    KC_WH_D,    KC_WH_U,	KC_WH_R,	KC_NO,  DM_RSTP,
+		KC_NO,		KC_NO,		KC_NO,		                                                            KC_BTN2,	KC_BTN1,	KC_BTN3
 	),
-	[4] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		LSFT(KC_LBRC),	LSFT(KC_7),		LSFT(KC_8),	LSFT(KC_9),	LSFT(KC_RBRC),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		LSFT(KC_SCLN),	LSFT(KC_4),		LSFT(KC_5),	LSFT(KC_6),	LSFT(KC_EQL),		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
-		KC_NO,		LSFT(KC_GRV),	LSFT(KC_1),		LSFT(KC_2),	LSFT(KC_3),	LSFT(KC_BSLS),		KC_NO,		DF(4),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		LSFT(KC_9),	LSFT(KC_0),		LSFT(KC_MINS),	KC_NO,		KC_NO,		KC_NO
+	[4] = LAYOUT_split_3x6_3_ex2( // Shifted Numbers and Symbols Layer
+		KC_NO,		LSFT(KC_LBRC),	LSFT(KC_7),		LSFT(KC_8),	LSFT(KC_9),	LSFT(KC_RBRC),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		DF(7),
+		KC_NO,		LSFT(KC_SCLN),	LSFT(KC_4),		LSFT(KC_5),	LSFT(KC_6),	LSFT(KC_EQL),		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	DF(0),
+		KC_NO,		LSFT(KC_GRV),	LSFT(KC_1),		LSFT(KC_2),	LSFT(KC_3),	LSFT(KC_BSLS),		                        KC_NO,		DF(4),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+		LSFT(KC_9),	LSFT(KC_0),		LSFT(KC_MINS),	                                                                    KC_NO,		KC_NO,		KC_NO
 	),
-	[5] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_LBRC,	KC_7,		KC_8,		KC_9,		KC_RBRC,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_SCLN,	KC_4,		KC_5,		KC_6,		KC_EQL,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,		KC_NO,
-		KC_NO,		KC_GRV,		KC_1,		KC_2,		KC_3,		KC_BSLS,	KC_NO,		DF(5),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		KC_DOT,		KC_0,		KC_MINS,	KC_NO,		KC_NO,		KC_NO
+	[5] = LAYOUT_split_3x6_3_ex2( // Numbers and Symbols Layer
+		KC_NO,		KC_LBRC,	KC_7,		KC_8,		KC_9,		KC_RBRC,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		DF(7),
+		KC_NO,		KC_SCLN,	KC_4,		KC_5,		KC_6,		KC_EQL,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	DF(0),
+		KC_NO,		KC_GRV,		KC_1,		KC_2,		KC_3,		KC_BSLS,	                        KC_NO,		DF(5),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+		KC_DOT,		KC_0,		KC_MINS,	                                                            KC_NO,		KC_NO,		KC_NO
 	),
-	[6] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_F12,		KC_F7,		KC_F8,		KC_F9,		KC_PSCR,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_F11,		KC_F4,		KC_F5,		KC_F6,		KC_SCROLL_LOCK,	KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
-		KC_NO,		KC_F10,		KC_F1,		KC_F2,		KC_F3,		KC_PAUS,		KC_NO,		DF(6),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		KC_RGUI,	KC_SPC,		KC_TAB,		KC_NO,		KC_NO,		KC_NO
+	[6] = LAYOUT_split_3x6_3_ex2( // Function Keys Layer
+		KC_NO,		KC_F12,		KC_F7,		KC_F8,		KC_F9,		KC_PSCR,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		DF(7),
+		KC_NO,		KC_F11,		KC_F4,		KC_F5,		KC_F6,		KC_SCROLL_LOCK,	KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	DF(0),
+		KC_NO,		KC_F10,		KC_F1,		KC_F2,		KC_F3,		KC_PAUS,		                        KC_NO,		DF(6),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+		KC_RGUI,	KC_SPC,		KC_TAB,		                                                                KC_NO,		KC_NO,		KC_NO
 	),
-	[7] = LAYOUT_split_3x6_3_ex2(
-		DM_REC1,	KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_NO,		KC_NO,		KC_AGIN,	KC_PSTE,	KC_COPY,		KC_CUT,		KC_UNDO,		DT_PRNT,
-		DM_PLY1,	KC_LGUI,		KC_LOPT,	KC_LCTL,		KC_LSFT,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,		KC_RALT,	KC_RGUI,		DT_UP,
-		DM_RSTP,	KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_AGIN,	KC_PSTE,	KC_COPY,	KC_CUT,		KC_UNDO,		DT_DOWN,
-		KC_BTN3,	KC_BTN1,		KC_BTN2,	KC_BTN2,		KC_BTN1,		KC_BTN3
+	[7] = LAYOUT_split_3x6_3_ex2( // Minecraft Layer
+		KC_ESC,	    	KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		KC_WH_U,	QK_LOCK,	KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        DF(0),
+		KC_TAB,		    KC_A,		        KC_S,	        KC_D,	        KC_F,	        KC_G,		KC_WH_D,	KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_QUOT),	DF(0),
+		KC_I,	    	KC_Z,	            KC_X,		    KC_C,   		KC_V,	    	KC_B,		                        KC_N,		KC_M,		    KC_COMM,	    KC_DOT,	    	LT(7, KC_SLSH),	    KC_NO,
+		KC_LSFT,	    KC_SPC,		KC_TAB,                                                                                     LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
 	),
 	[8] = LAYOUT_split_3x6_3_ex2(
 		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
@@ -75,81 +75,81 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
 		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
 	)};
-#else
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_split_3x6_3_ex2(
-		KC_QUOT,		KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		KC_NO,		KC_NO,		KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        KC_BSLS,
-		KC_LSFT,		LGUI_T(KC_A),		LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F),	KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_SCLN),	KC_QUOT,
-		KC_LSFT,		LT(7, KC_Z),		KC_X,		    KC_C,   		KC_V,	    	KC_B,		KC_N,		KC_M,		KC_COMM,	KC_DOT,	    	LT(7, KC_SLSH),	KC_RSFT,
-		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
-	),
-	[1] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,	RGB_SAI,		RGB_VAI,	KC_NO,
-		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,		KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_MSTP,	KC_MPLY,	KC_MUTE
-	),
-	[2] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_CAPS,		KC_AGIN,		KC_PSTE,		KC_COPY,		KC_CUT,		KC_UNDO,	KC_NO,
-		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_INS,		    KC_LEFT,		KC_DOWN,		KC_UP,		    KC_RGHT,	KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(2),		KC_NO,		KC_HOME,	KC_PGDN,		KC_PGUP,		KC_END,		    KC_NO,		    KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_ENT,		KC_BSPC,	KC_DEL
-	),
-	[3] = LAYOUT_split_3x6_3_ex2(
-		KC_ACL2,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_AGIN,		KC_PSTE,		KC_COPY,	KC_CUT,		KC_UNDO,	KC_NO,
-		KC_ACL1,	KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MS_L,		KC_MS_D,		KC_MS_U,	KC_MS_R,	KC_NO,		KC_NO,
-		KC_ACL0,	KC_NO,		KC_RALT,	DF(0),		DF(3),		KC_NO,		KC_WH_L,	KC_WH_D,	KC_WH_U,		KC_WH_R,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_BTN2,	KC_BTN1,	KC_BTN3
-	),
-	[4] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		LSFT(KC_LBRC),	LSFT(KC_7),		LSFT(KC_8),	LSFT(KC_9),	LSFT(KC_RBRC),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		LSFT(KC_SCLN),	LSFT(KC_4),		LSFT(KC_5),	LSFT(KC_6),	LSFT(KC_EQL),		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
-		KC_NO,		LSFT(KC_GRV),	LSFT(KC_1),		LSFT(KC_2),	LSFT(KC_3),	LSFT(KC_BSLS),		KC_NO,		DF(4),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		LSFT(KC_9),	LSFT(KC_0),		LSFT(KC_MINS),	KC_NO,		KC_NO,		KC_NO
-	),
-	[5] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_LBRC,	KC_7,		KC_8,		KC_9,		KC_RBRC,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_SCLN,	KC_4,		KC_5,		KC_6,		KC_EQL,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,		KC_NO,
-		KC_NO,		KC_GRV,		KC_1,		KC_2,		KC_3,		KC_BSLS,	KC_NO,		DF(5),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		KC_DOT,		KC_0,		KC_MINS,	KC_NO,		KC_NO,		KC_NO
-	),
-	[6] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_F12,		KC_F7,		KC_F8,		KC_F9,		KC_PSCR,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_F11,		KC_F4,		KC_F5,		KC_F6,		KC_SCROLL_LOCK,	KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
-		KC_NO,		KC_F10,		KC_F1,		KC_F2,		KC_F3,		KC_PAUS,		KC_NO,		DF(6),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
-		KC_RGUI,	KC_SPC,		KC_TAB,		KC_NO,		KC_NO,		KC_NO
-	),
-	[7] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_NO,		KC_NO,		KC_AGIN,	KC_PSTE,	KC_COPY,		KC_CUT,		KC_UNDO,		KC_NO,
-		KC_NO,		KC_LGUI,		KC_LOPT,	KC_LCTL,		KC_LSFT,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,		KC_RALT,	KC_RGUI,		KC_NO,
-		KC_NO,		KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_AGIN,	KC_PSTE,	KC_COPY,	KC_CUT,		KC_UNDO,		KC_NO,
-		KC_BTN3,	KC_BTN1,		KC_BTN2,	KC_BTN2,		KC_BTN1,		KC_BTN3
-	),
-	[8] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
-	),
-	[9] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
-	),
-	[10] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
-	),
-	[11] = LAYOUT_split_3x6_3_ex2(
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
-		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
-    )};
-#endif
+//#else
+//const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+//	[0] = LAYOUT_split_3x6_3_ex2(
+//		KC_QUOT,		KC_Q,		        KC_W,		    KC_E,   		KC_R,   		KC_T,		KC_NO,		KC_NO,		KC_Y,		KC_U,		    KC_I,		    KC_O,		    KC_P,		        KC_BSLS,
+//		KC_LSFT,		LGUI_T(KC_A),		LALT_T(KC_S),	LCTL_T(KC_D),	LSFT_T(KC_F),	KC_G,		KC_NO,		KC_NO,		KC_H,		RSFT_T(KC_J),   RCTL_T(KC_K),	RALT_T(KC_L),	RGUI_T(KC_SCLN),	KC_QUOT,
+//		KC_LSFT,		LT(7, KC_Z),		KC_X,		    KC_C,   		KC_V,	    	KC_B,		KC_N,		KC_M,		KC_COMM,	KC_DOT,	    	LT(7, KC_SLSH),	KC_RSFT,
+//		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
+//	),
+//	[1] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		RGB_HUI,	RGB_SAI,		RGB_VAI,	KC_NO,
+//		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,		KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_MSTP,	KC_MPLY,	KC_MUTE
+//	),
+//	[2] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_CAPS,		KC_AGIN,		KC_PSTE,		KC_COPY,		KC_CUT,		KC_UNDO,	KC_NO,
+//		KC_NO,		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_INS,		    KC_LEFT,		KC_DOWN,		KC_UP,		    KC_RGHT,	KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(2),		KC_NO,		KC_HOME,	KC_PGDN,		KC_PGUP,		KC_END,		    KC_NO,		    KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_ENT,		KC_BSPC,	KC_DEL
+//	),
+//	[3] = LAYOUT_split_3x6_3_ex2(
+//		KC_ACL2,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_AGIN,		KC_PSTE,		KC_COPY,	KC_CUT,		KC_UNDO,	KC_NO,
+//		KC_ACL1,	KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MS_L,		KC_MS_D,		KC_MS_U,	KC_MS_R,	KC_NO,		KC_NO,
+//		KC_ACL0,	KC_NO,		KC_RALT,	DF(0),		DF(3),		KC_NO,		KC_WH_L,	KC_WH_D,	KC_WH_U,		KC_WH_R,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_BTN2,	KC_BTN1,	KC_BTN3
+//	),
+//	[4] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		LSFT(KC_LBRC),	LSFT(KC_7),		LSFT(KC_8),	LSFT(KC_9),	LSFT(KC_RBRC),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		LSFT(KC_SCLN),	LSFT(KC_4),		LSFT(KC_5),	LSFT(KC_6),	LSFT(KC_EQL),		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
+//		KC_NO,		LSFT(KC_GRV),	LSFT(KC_1),		LSFT(KC_2),	LSFT(KC_3),	LSFT(KC_BSLS),		KC_NO,		DF(4),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+//		LSFT(KC_9),	LSFT(KC_0),		LSFT(KC_MINS),	KC_NO,		KC_NO,		KC_NO
+//	),
+//	[5] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_LBRC,	KC_7,		KC_8,		KC_9,		KC_RBRC,	KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_SCLN,	KC_4,		KC_5,		KC_6,		KC_EQL,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,		KC_NO,
+//		KC_NO,		KC_GRV,		KC_1,		KC_2,		KC_3,		KC_BSLS,	KC_NO,		DF(5),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+//		KC_DOT,		KC_0,		KC_MINS,	KC_NO,		KC_NO,		KC_NO
+//	),
+//	[6] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_F12,		KC_F7,		KC_F8,		KC_F9,		KC_PSCR,		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_F11,		KC_F4,		KC_F5,		KC_F6,		KC_SCROLL_LOCK,	KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,	KC_RALT,	KC_RGUI,	KC_NO,
+//		KC_NO,		KC_F10,		KC_F1,		KC_F2,		KC_F3,		KC_PAUS,		KC_NO,		DF(6),		DF(0),		KC_RALT,	KC_NO,		KC_NO,
+//		KC_RGUI,	KC_SPC,		KC_TAB,		KC_NO,		KC_NO,		KC_NO
+//	),
+//	[7] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_NO,		KC_NO,		KC_AGIN,	KC_PSTE,	KC_COPY,		KC_CUT,		KC_UNDO,		KC_NO,
+//		KC_NO,		KC_LGUI,		KC_LOPT,	KC_LCTL,		KC_LSFT,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_RSFT,	KC_RCTL,		KC_RALT,	KC_RGUI,		KC_NO,
+//		KC_NO,		KC_UNDO,		KC_CUT,		KC_COPY,		KC_PSTE,		KC_AGIN,	KC_AGIN,	KC_PSTE,	KC_COPY,	KC_CUT,		KC_UNDO,		KC_NO,
+//		KC_BTN3,	KC_BTN1,		KC_BTN2,	KC_BTN2,		KC_BTN1,		KC_BTN3
+//	),
+//	[8] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
+//	),
+//	[9] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
+//	),
+//	[10] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
+//	),
+//	[11] = LAYOUT_split_3x6_3_ex2(
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
+//		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO
+//    )};
+//#endif
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
