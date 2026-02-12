@@ -6,35 +6,17 @@
 
 Please see https://docs.qmk.fm/#/newbs_getting_started and set up 1 to 3.
 
-## 2. Getting source files
+## 2. Files to Modify
 
-Please get source files of `qmk/qmk_firmware` and `vial-kb/vial-qmk`
-```sh
-make git-submodule
-```
+- `keyboards\crkbd\vial-kb\vial-qmk\keymaps\vial\config.h`
+- `keyboards\crkbd\vial-kb\vial-qmk\keymaps\vial\keymap.c`
+- `keyboards\crkbd\vial-kb\vial-qmk\keymaps\vial\rules.mk`
 
-## 3. Building firmwares
+## 3. Quick Notes for Compiling and Flashing
 
-### for VIA
-
-```sh
-make qmk-clean
-kb=crkbd make qmk-init
-kb=crkbd kr=rev4_1/standard km=via make qmk-compile
-```
-A built data will be stored on `keyboards/crkbd/qmk/qmk_firmware/.build`\
-Please change `kb`, `kr` and `km` when build other.
-
-### for Vial
-```sh
-make vial-qmk-clean
-kb=crkbd make vial-qmk-init
-kb=crkbd kr=rev4_1/standard km=vial make vial-qmk-compile
-```
-A built data will be stored on `keyboards/crkbd/vial-kb/vial-qmk/.build`\
-Please change `kb`, `kr` and `km` when build other.
-
-### All cleaning and building
-```sh
-make update-all
-```
+1. open qmk msys terminal
+2. `cd source/kbd_firmware/`
+3. `make vial-qmk-clean && kb=crkbd make vial-qmk-init && kb=crkbd kr=rev4_1/standard km=vial make vial-qmk-compile`
+4. unplug the keyboard, hold down the top row 2nd to far outside key, plug in that half of the keyboard, a drive mount will popup/appear
+5. `kb=crkbd kr=rev4_1/standard km=vial make vial-qmk-flash`
+6. repeat 4. and 5. for the other half of the keyboard
