@@ -10,3 +10,4 @@ RGB_MATRIX_ENABLE           = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 DYNAMIC_MACRO_ENABLE        = yes
 KEY_LOCK_ENABLE             = yes
+CONSOLE_ENABLE 				= no

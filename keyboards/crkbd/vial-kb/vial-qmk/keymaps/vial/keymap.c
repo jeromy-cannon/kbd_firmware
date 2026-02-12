@@ -1,5 +1,15 @@
 #include QMK_KEYBOARD_H
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_T(KC_SPC):
+            return TAPPING_TERM + 1250;
+        case LT(1, KC_GRV):
+            return 130;
+        default:
+            return TAPPING_TERM;
+    }
+}
 
 //#ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -10,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		LT(1, KC_ESC),	LT(2, KC_SPC),		LT(3, KC_TAB),	                                                                    LT(4, KC_ENT),	LT(5, KC_BSPC),	LT(6, KC_DEL)
 	),
 	[1] = LAYOUT_split_3x6_3_ex2( // Media Layer
-		DF(7),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		KC_NO,		DT_DOWN,	DT_UP,		DT_PRNT,		KC_NO,		KC_NO,
+		DF(7),		KC_NO,		KC_NO,		KC_NO,		DF(0),		KC_NO,		KC_NO,		KC_NO,		DB_TOGG,	DT_DOWN,	DT_UP,		DT_PRNT,		KC_NO,		KC_NO,
 		DF(0),		KC_LGUI,	KC_LOPT,	KC_LCTL,	KC_LSFT,	KC_NO,		KC_NO,		KC_NO,		KC_MPRV,	KC_VOLD,	KC_VOLU,	KC_MNXT,		KC_NO,		KC_NO,
 		KC_NO,		KC_NO,		KC_RALT,	DF(0),		DF(1),		KC_NO,								KC_NO,		KC_BRID,	KC_BRIU,	KC_NO,			KC_NO,		KC_NO,
 		KC_NO,		KC_NO,		KC_NO,																	KC_MSTP,	KC_MPLY,	KC_MUTE

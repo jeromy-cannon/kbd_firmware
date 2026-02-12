@@ -9,21 +9,25 @@
 #undef  NUM_ENCODERS
 #define NUM_ENCODERS 12
 
+// #define DEBUG_TAP_HOLD
+// #define DEBUG_MATRIX_SCAN_RATE
+
 // keyboard settings
-// #define FLOW_TAP_TERM 300 // https://docs.qmk.fm/tap_hold#flow-tap
-#define TAPPING_TERM 160 // https://docs.qmk.fm/tap_hold#dynamic-tapping-term
-// #define RETRO_TAPPING // https://docs.qmk.fm/tap_hold#retro-tapping // disabled to fix leftgui(a) > i
-#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F18 // https://docs.qmk.fm/tap_hold#retro-tapping
+#define FLOW_TAP_TERM 160 // https://docs.qmk.fm/tap_hold#flow-tap
+#define TAPPING_TERM 300 // https://docs.qmk.fm/tap_hold#dynamic-tapping-term
+#define RETRO_TAPPING // https://docs.qmk.fm/tap_hold#retro-tapping // disabled to try and fix leftgui(a) > i
+#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F24 // https://docs.qmk.fm/tap_hold#retro-tapping
 #define MODS_TO_NEUTRALIZE { MOD_BIT(KC_LEFT_SHIFT), MOD_BIT(KC_LEFT_ALT), MOD_BIT(KC_LEFT_CTRL), MOD_BIT(KC_LEFT_GUI), MOD_BIT(KC_RIGHT_SHIFT), MOD_BIT(KC_RIGHT_ALT), MOD_BIT(KC_RIGHT_CTRL), MOD_BIT(KC_RIGHT_GUI) } // https://docs.qmk.fm/tap_hold#retro-tapping
-// #define SPECULATIVE_HOLD // https://docs.qmk.fm/tap_hold#speculative-hold
-//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-#define CHORDAL_HOLD // https://docs.qmk.fm/tap_hold#chordal-hold // fixed rightctrl(k) > o issue
+#undef  SPECULATIVE_HOLD // https://docs.qmk.fm/tap_hold#speculative-hold
+#undef  DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#define CHORDAL_HOLD // https://docs.qmk.fm/tap_hold#chordal-hold // fixed rightctrl(k) > o issue // but annoying for alt+tabs   
+#undef  HOLD_ON_OTHER_KEY_PRESS
 // issues:
 // git checkout main
-// leftgui(a) > i
+// leftgui(a) > i: LGUI_T(KC_A): Mod-Tap shortcuts: Left GUI when held, kc when tapped
 // rightctrl(k) > o
-#define PERMISSIVE_HOLD // https://docs.qmk.fm/tap_hold#permissive-hold
-
+#undef  PERMISSIVE_HOLD // https://docs.qmk.fm/tap_hold#permissive-hold
+#define DYNAMIC_TAPPING_TERM_INCREMENT 10
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #undef  DEBOUNCE
 #define DEBOUNCE 20 // default is 5
