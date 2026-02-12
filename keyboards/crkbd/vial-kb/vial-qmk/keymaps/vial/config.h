@@ -10,10 +10,11 @@
 #define NUM_ENCODERS 12
 
 // keyboard settings
-#define FLOW_TAP_TERM 100
-#define TAPPING_TERM 200
-#define RETRO_TAPPING
-#define SPECULATIVE_HOLD
+#define FLOW_TAP_TERM 100 // https://docs.qmk.fm/tap_hold#flow-tap
+#define TAPPING_TERM 200 // https://docs.qmk.fm/tap_hold#dynamic-tapping-term
+#define RETRO_TAPPING // https://docs.qmk.fm/tap_hold#retro-tapping
+#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F18 // https://docs.qmk.fm/tap_hold#retro-tapping
+// #define SPECULATIVE_HOLD // https://docs.qmk.fm/tap_hold#speculative-hold
 //#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #undef  DEBOUNCE
