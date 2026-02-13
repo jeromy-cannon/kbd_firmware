@@ -1,15 +1,25 @@
 #include QMK_KEYBOARD_H
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case SFT_T(KC_SPC):
-            return TAPPING_TERM + 1250;
-        case LT(1, KC_GRV):
-            return 130;
-        default:
-            return TAPPING_TERM;
-    }
-}
+// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case SFT_T(KC_SPC):
+//             return TAPPING_TERM + 1250;
+//         case LT(1, KC_GRV):
+//             return 130;
+//         default:
+//             return TAPPING_TERM;
+//     }
+// }
+
+// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case LGUI_T(KC_A):
+//         case LALT_T(KC_S):
+//             return true;
+//         default:
+//             return false;
+//     }
+// }
 
 //#ifdef LAYOUT_split_3x6_3_ex2
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

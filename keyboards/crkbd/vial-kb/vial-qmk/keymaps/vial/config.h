@@ -21,12 +21,12 @@
 #undef  SPECULATIVE_HOLD // https://docs.qmk.fm/tap_hold#speculative-hold
 #undef  DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 #define CHORDAL_HOLD // https://docs.qmk.fm/tap_hold#chordal-hold // fixed rightctrl(k) > o issue // but annoying for alt+tabs   
-#undef  HOLD_ON_OTHER_KEY_PRESS
+#define HOLD_ON_OTHER_KEY_PRESS
 // issues:
 // git checkout main
 // leftgui(a) > i: LGUI_T(KC_A): Mod-Tap shortcuts: Left GUI when held, kc when tapped
 // rightctrl(k) > o
-#undef  PERMISSIVE_HOLD // https://docs.qmk.fm/tap_hold#permissive-hold
+#define PERMISSIVE_HOLD // https://docs.qmk.fm/tap_hold#permissive-hold
 #define DYNAMIC_TAPPING_TERM_INCREMENT 10
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #undef  DEBOUNCE
