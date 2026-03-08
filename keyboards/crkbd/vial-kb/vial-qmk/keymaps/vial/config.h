@@ -16,7 +16,7 @@
 #define FLOW_TAP_TERM 160 // https://docs.qmk.fm/tap_hold#flow-tap
 #define TAPPING_TERM 240 // https://docs.qmk.fm/tap_hold#dynamic-tapping-term
 #define RETRO_TAPPING // https://docs.qmk.fm/tap_hold#retro-tapping // disabled to try and fix leftgui(a) > i
-#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F24 // https://docs.qmk.fm/tap_hold#retro-tapping
+#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F23 // https://docs.qmk.fm/tap_hold#retro-tapping
 #define MODS_TO_NEUTRALIZE { MOD_BIT(KC_LEFT_SHIFT), MOD_BIT(KC_LEFT_ALT), MOD_BIT(KC_LEFT_CTRL), MOD_BIT(KC_LEFT_GUI), MOD_BIT(KC_RIGHT_SHIFT), MOD_BIT(KC_RIGHT_ALT), MOD_BIT(KC_RIGHT_CTRL), MOD_BIT(KC_RIGHT_GUI) } // https://docs.qmk.fm/tap_hold#retro-tapping
 #undef  SPECULATIVE_HOLD // https://docs.qmk.fm/tap_hold#speculative-hold
 #undef  DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
